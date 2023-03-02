@@ -1,0 +1,16 @@
+{
+    "name": "justnoonehere/gmail-sender",
+    "autoload": {
+        "psr-4": {
+            "Justnoonehere\\GmailSender\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "justnoonehere"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.7"
+    }
+}

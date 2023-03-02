@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gmail Sender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="email-form">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="10"></textarea>
+        <label for="attachment">Attachment:</label>
+        <input type="file" id="attachment" name="attachment">
+        <label for="emails">Emails (one per line):</label>
+        <textarea id="emails" name="emails" rows="10"></textarea>
+        <button type="submit">Send Emails</button>
+    </form>
+    <label id="status-message-label" for="status-message">Console:</label>
+    <textarea id="status-message" readonly>
+	
+   _____                 _ _    _____                _           
+  / ____|               (_) |  / ____|              | |          
+ | |  __ _ __ ___   __ _ _| | | (___   ___ _ __   __| | ___ _ __ 
+ | | |_ | '_ ` _ \ / _` | | |  \___ \ / _ \ '_ \ / _` |/ _ \ '__|
+ | |__| | | | | | | (_| | | |  ____) |  __/ | | | (_| |  __/ |   
+  \_____|_| |_| |_|\__,_|_|_| |_____/ \___|_| |_|\__,_|\___|_|   
+                                                                 
+
+</textarea>
+    <script src="email-sender.js"></script>
+</body>
+</html>
