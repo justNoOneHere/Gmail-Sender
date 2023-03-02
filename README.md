@@ -1,6 +1,6 @@
 # Gmail Sender
 
-This is a simple HTML form for sending emails using Gmail. It allows the user to input their email and password, the email subject and message, an optional attachment, and a list of recipient email addresses. When the "Send Emails" button is clicked, the email is sent to all the specified recipients using Gmail's SMTP server.
+This is a script for sending emails using Gmail. It allows the user to input their email and password, the email subject and message, an optional attachment, and a list of recipient email addresses. When the "Send Emails" button is clicked, the email is sent to all the specified recipients using Gmail's SMTP server.
 
 ## Getting Started
 
