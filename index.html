@@ -18,6 +18,11 @@
         <input type="file" id="attachment" name="attachment">
         <label for="emails">Emails (one per line):</label>
         <textarea id="emails" name="emails" rows="10"></textarea>
+		<label for="file-upload">Select Emails List:</label>
+		<div class="file-input-container">
+		  <input id="file-upload" type="file" multiple>
+		  <button id="upload-button">Grap</button>
+		</div>
         <button type="submit">Send Emails</button>
     </form>
     <label id="status-message-label" for="status-message">Console:</label>

@@ -3,6 +3,29 @@ const statusTable = document.createElement('table');
 const statusTableBody = document.createElement('tbody');
 const statusMessage = document.getElementById('status-message');
 
+const fileInput = document.getElementById('file-upload');
+const uploadButton = document.getElementById('upload-button');
+const emailsTextarea = document.getElementById('emails');
+
+uploadButton.addEventListener('click', function() {
+  const files = fileInput.files;
+  for (let i = 0; i < files.length; i++) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const contents = e.target.result;
+      const emails = contents.split('\n');
+      for (let j = 0; j < emails.length; j++) {
+        const email = emails[j].trim();
+        if (email !== '') {
+          emailsTextarea.value += email + '\n';
+        }
+      }
+    };
+    reader.readAsText(files[i]);
+  }
+});
+
+
 emailForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -13,8 +36,9 @@ emailForm.addEventListener('submit', (e) => {
   const attachment = document.getElementById('attachment').files[0];
 	const emailsString = document.getElementById('emails').value;
 	const emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
-	const emails = emailsString.match(emailPattern);
-
+	const uniqueEmails = emailsString.match(emailPattern);
+	const emails = [...new Set(uniqueEmails)];
+	
   let currentEmailIndex = 0;
 
   function sendEmail() {
