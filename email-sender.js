@@ -6,6 +6,47 @@ const statusMessage = document.getElementById('status-message');
 const fileInput = document.getElementById('file-upload');
 const uploadButton = document.getElementById('upload-button');
 const emailsTextarea = document.getElementById('emails');
+    const editor = document.querySelector('.editor');
+    const hiddenTextarea = document.querySelector('#message');
+    const toolbarButtons = document.querySelectorAll('.toolbar-button');
+    const toolbarSelect = document.querySelector('.toolbar-select');
+
+    function execCommand(command, value = null) {
+      document.execCommand(command, false, value);
+      editor.focus();
+    }
+
+    toolbarButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        execCommand(button.dataset.command);
+      });
+    });
+
+    toolbarSelect.addEventListener('change', () => {
+      execCommand(toolbarSelect.dataset.command, toolbarSelect.value);
+});
+
+editor.addEventListener('input', () => {
+  hiddenTextarea.value = editor.innerHTML;
+});
+
+hiddenTextarea.addEventListener('input', () => {
+  editor.innerHTML = hiddenTextarea.value;
+});
+
+editor.addEventListener('paste', (event) => {
+  event.preventDefault();
+  const text = event.clipboardData.getData('text/plain');
+  document.execCommand('insertHTML', false, text);
+});
+
+editor.addEventListener('keydown', (event) => {
+  if (event.keyCode === 9) {
+    event.preventDefault();
+    document.execCommand('insertHTML', false, '&#009');
+  }
+});
+
 
 uploadButton.addEventListener('click', function() {
   const files = fileInput.files;

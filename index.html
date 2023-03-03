@@ -5,6 +5,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="r">
+	<label for="toolbar">Message Editor:</label>
+  <div class="toolbar">
+    <select class="toolbar-select" data-command="formatBlock">
+      <option value="">Paragraph</option>
+      <option value="h1">Heading 1</option>
+      <option value="h2">Heading 2</option>
+      <option value="h3">Heading 3</option>
+      <option value="h4">Heading 4</option>
+      <option value="h5">Heading 5</option>
+      <option value="h6">Heading 6</option>
+    </select>
+    <button class="toolbar-button" data-command="bold">B</button>
+    <button class="toolbar-button" data-command="italic">I</button>
+    <button class="toolbar-button" data-command="underline">U</button>
+    <button class="toolbar-button" data-command="strikeThrough">S</button>
+    <button class="toolbar-button" data-command="justifyLeft">&#x21e6;</button>
+    <button class="toolbar-button" data-command="justifyCenter">&#x21c4;</button>
+    <button class="toolbar-button" data-command="justifyRight">&#x21e8;</button>
+    <button class="toolbar-button" data-command="justifyFull">&#x21e9;</button>
+    <button class="toolbar-button" data-command="insertOrderedList">&#35;</button>
+    <button class="toolbar-button" data-command="insertUnorderedList">&#x2022;</button>
+    <button class="toolbar-button" data-command="undo">&#x21b6;</button>
+    <button class="toolbar-button" data-command="redo">&#x21b7;</button>
+  </div>
+
+  <div class="editor" contenteditable="true"></div>
+
     <form id="email-form">
         <label for="email">Email:</label>
         <input type="text" id="email" name="email">
@@ -25,6 +53,7 @@
 		</div>
         <button type="submit">Send Emails</button>
     </form>
+	</div>
     <label id="status-message-label" for="status-message">Console:</label>
     <textarea id="status-message" readonly>
 	
@@ -37,6 +66,8 @@
                                                                  
 
 </textarea>
+
+
     <script src="email-sender.js"></script>
 </body>
 </html>

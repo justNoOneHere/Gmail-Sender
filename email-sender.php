@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Content
-    $mail->isHTML(false);
+    $mail->isHTML(true);
     $mail->Subject = $subject;
     $mail->Body = $message;
 
